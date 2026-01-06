@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TransformLearning.ai - AI-Powered Learning Analytics for Higher Education</title>
+    <title>TransformLearning.ai - AI-Powered Education Solutions</title>
     <style>
         * {
             margin: 0;
@@ -15,6 +16,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
         }
 
         .container {
@@ -23,10 +25,9 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -37,6 +38,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -49,6 +51,7 @@
             display: flex;
             gap: 30px;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
@@ -71,6 +74,7 @@
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
 
         .btn-primary {
@@ -94,7 +98,15 @@
             color: white;
         }
 
-        /* Hero Section */
+        .btn-white {
+            background: white;
+            color: #1e293b;
+        }
+
+        .btn-white:hover {
+            background: #f1f5f9;
+        }
+
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -103,16 +115,16 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: 22px;
             margin-bottom: 40px;
             opacity: 0.95;
-            max-width: 800px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -124,7 +136,6 @@
             flex-wrap: wrap;
         }
 
-        /* Section Styles */
         section {
             padding: 80px 0;
         }
@@ -140,14 +151,31 @@
             text-align: center;
             font-size: 18px;
             color: #64748b;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 60px;
+            line-height: 1.8;
         }
 
-        /* Value Proposition */
+        .bg-gray {
+            background: #f8fafc;
+        }
+
+        .bg-dark {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+        }
+
+        .bg-dark .section-title {
+            color: white;
+        }
+
+        .bg-light-blue {
+            background: #eff6ff;
+        }
+
         .value-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-top: 60px;
         }
@@ -155,18 +183,25 @@
         .value-card {
             text-align: center;
             padding: 30px;
+            background: white;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
         }
 
         .value-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: #eff6ff;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            font-size: 30px;
+            font-size: 35px;
         }
 
         .value-card h3 {
@@ -180,9 +215,80 @@
             line-height: 1.7;
         }
 
-        /* Dashboard Preview */
-        .dashboard-section {
-            background: #f8fafc;
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 40px;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .product-card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+
+        .product-card p {
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .product-features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #475569;
+        }
+
+        .product-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 18px;
         }
 
         .dashboard-content {
@@ -201,7 +307,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            text-align: center;
         }
 
         .dashboard-features {
@@ -233,7 +339,6 @@
             color: #1e293b;
         }
 
-        /* Tabs */
         .tabs {
             display: flex;
             justify-content: center;
@@ -250,6 +355,7 @@
             cursor: pointer;
             font-weight: 600;
             transition: all 0.3s;
+            font-size: 16px;
         }
 
         .tab-btn.active {
@@ -262,7 +368,7 @@
             background: white;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .tab-content.active {
@@ -270,9 +376,16 @@
         }
 
         .tab-content h3 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
             color: #1e293b;
+        }
+
+        .tab-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #475569;
+            line-height: 1.8;
         }
 
         .tab-content ul {
@@ -281,9 +394,11 @@
         }
 
         .tab-content ul li {
-            padding: 10px 0;
+            padding: 12px 0;
             padding-left: 25px;
             position: relative;
+            color: #475569;
+            font-size: 16px;
         }
 
         .tab-content ul li:before {
@@ -291,58 +406,61 @@
             position: absolute;
             left: 0;
             color: #2563eb;
-        }
-
-        /* Pilot Partner Section */
-        .pilot-section {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            color: white;
+            font-weight: bold;
         }
 
         .pilot-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
         }
 
         .pilot-benefits {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
 
         .pilot-benefit {
-            padding: 20px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
         }
 
         .pilot-benefit h4 {
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .pilot-benefit p {
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         .badge {
             display: inline-block;
             background: #fbbf24;
             color: #1e293b;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-weight: 600;
-            margin-top: 20px;
+            margin: 20px 0;
+            font-size: 14px;
         }
 
-        /* Stories Grid */
         .stories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
 
         .story-card {
             background: white;
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
 
@@ -353,15 +471,14 @@
         .story-card h3 {
             color: #2563eb;
             margin-bottom: 15px;
-            font-size: 22px;
+            font-size: 24px;
         }
 
         .story-card p {
             color: #64748b;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        /* Video Section */
         .video-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -374,60 +491,58 @@
 
         .video-placeholder {
             background: #e2e8f0;
-            height: 200px;
+            height: 220px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
-            font-size: 48px;
+            font-size: 60px;
             color: #64748b;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .video-placeholder:hover {
+            background: #cbd5e1;
         }
 
         .video-card h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: #1e293b;
+            font-size: 20px;
         }
 
         .video-card p {
             color: #64748b;
-            font-size: 14px;
-        }
-
-        /* Download Section */
-        .download-section {
-            background: #f8fafc;
+            font-size: 15px;
+            line-height: 1.6;
         }
 
         .download-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
         .download-card {
             background: white;
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
         .download-card h3 {
             color: #1e293b;
             margin-bottom: 15px;
+            font-size: 22px;
         }
 
         .download-card p {
             color: #64748b;
             margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: #eff6ff;
-            text-align: center;
+            line-height: 1.7;
         }
 
         .cta-buttons {
@@ -438,7 +553,6 @@
             flex-wrap: wrap;
         }
 
-        /* Footer */
         footer {
             background: #1e293b;
             color: white;
@@ -462,7 +576,7 @@
         }
 
         .footer-column ul li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-column a {
@@ -482,18 +596,13 @@
             color: #94a3b8;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
 
             .hero p {
                 font-size: 18px;
-            }
-
-            .dashboard-content {
-                grid-template-columns: 1fr;
             }
 
             .nav-links {
@@ -503,57 +612,156 @@
             .section-title {
                 font-size: 28px;
             }
+
+            .dashboard-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid,
+            .stories-grid,
+            .video-grid,
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card,
+            .story-card,
+            .download-card {
+                padding: 25px;
+            }
         }
     </style>
 </head>
+
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
             <div class="logo">TransformLearning.ai</div>
             <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#transform-learning">Transform Learning</a></li>
                 <li><a href="#pilot">Pilot Program</a></li>
-                <li><a href="#insights">Insights</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="btn btn-primary">Schedule Briefing</a>
+            <a href="#contact" class="btn btn-primary">Get Started</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Transform Learning Outcomes With AI Built for Higher Education</h1>
-            <p>Track skills, strengthen accreditation evidence, and improve student persistence with a unified analytics platform designed for academic leaders.</p>
+            <h1>Transforming Education with AI</h1>
+            <p>We're building the future of teaching and learning through intelligent analytics, personalized learning
+                experiences, and innovative assessment tools that engage students and empower educators.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Schedule a Briefing</a>
-                <a href="#pilot" class="btn btn-secondary">Explore Pilot Partnership</a>
+                <a href="#products" class="btn btn-primary">Explore Our Products</a>
+                <a href="#pilot" class="btn btn-secondary">Become a Pilot Partner</a>
             </div>
         </div>
     </section>
 
-    <!-- Value Proposition -->
-    <section id="features">
+    <section id="mission" class="bg-gray">
         <div class="container">
-            <h2 class="section-title">Why Academic Leaders Choose TransformLearning</h2>
-            <p class="section-subtitle">Academic leaders face constant pressure to demonstrate measurable improvement. TransformLearning provides real-time insights into student progress—identifying issues before they become problems.</p>
-            
+            <h2 class="section-title">Our Mission</h2>
+            <p class="section-subtitle">We believe AI has the power to revolutionize how students learn and how
+                educators teach. Our mission is to create intelligent tools that improve student engagement, enhance
+                learning outcomes, support data-driven decision-making, and make assessment more meaningful. Through our
+                suite of products, and more in development, we're bringing AI transformation to every aspect of the
+                teaching and learning experience.</p>
+        </div>
+    </section>
+
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Our Product Suite</h2>
+            <p class="section-subtitle">Three powerful AI-driven solutions designed to transform different aspects of
+                education, from institutional analytics to personalized learning and interactive assessment.</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">📊</div>
+                    <div class="product-tag">For Higher Education Leaders</div>
+                    <h3>Transform Learning</h3>
+                    <p>AI-powered learning analytics that help academic leaders track student outcomes, strengthen
+                        accreditation evidence, and improve institutional effectiveness.</p>
+
+                    <ul class="product-features">
+                        <li>Real-time skill growth dashboards</li>
+                        <li>Early-warning indicators for at-risk students</li>
+                        <li>Automated accreditation reporting</li>
+                        <li>Program-level outcome alignment</li>
+                        <li>Equity and engagement analytics</li>
+                    </ul>
+
+                    <a href="#transform-learning" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Learn
+                        More</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🎓</div>
+                    <div class="product-tag">For Teachers & Students</div>
+                    <h3>YourClassroom.ai</h3>
+                    <p>Personalized AI-powered classroom assistant that adapts to individual student needs, provides
+                        instant feedback, and helps teachers manage differentiated instruction at scale.</p>
+
+                    <ul class="product-features">
+                        <li>Personalized learning paths</li>
+                        <li>Instant AI-powered feedback</li>
+                        <li>Adaptive content delivery</li>
+                        <li>Student progress tracking</li>
+                        <li>Teacher workflow automation</li>
+                    </ul>
+
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Coming Soon</a>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-icon">🧠</div>
+                    <div class="product-tag">Interactive Learning Platform</div>
+                    <h3>Nemorize</h3>
+                    <p>Revolutionary AI testing and learning application that helps students retain knowledge through
+                        intelligent spaced repetition, interactive quizzes, and gamified learning experiences.</p>
+
+                    <ul class="product-features">
+                        <li>AI-powered spaced repetition</li>
+                        <li>Interactive quiz generation</li>
+                        <li>Gamified learning experiences</li>
+                        <li>Course completion optimization</li>
+                        <li>Knowledge retention tracking</li>
+                    </ul>
+
+                    <a href="https://nemorize.com" target="_blank" class="btn btn-primary"
+                        style="margin-top: 20px; width: 100%;">Visit Nemorize</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="transform-learning" class="bg-gray">
+        <div class="container">
+            <h2 class="section-title">Transform Learning: AI Analytics for Higher Education</h2>
+            <p class="section-subtitle">Academic leaders are under pressure to demonstrate measurable improvement in
+                retention, skill development, equity, and accreditation readiness. Transform Learning gives departments
+                real-time insight into how students are progressing, before issues become problems.</p>
+
             <div class="value-grid">
                 <div class="value-card">
                     <div class="value-icon">🎯</div>
                     <h3>Early Detection</h3>
-                    <p>Identify at-risk students weeks earlier with engagement and performance analytics that reveal struggles before grades decline.</p>
+                    <p>Identify at-risk students weeks earlier with engagement and performance analytics that reveal
+                        struggles before grades decline.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">📊</div>
-                    <h3>Skills Intelligence</h3>
-                    <p>Track learning outcomes and hidden skills across any course or program with AI-powered mapping and visualization.</p>
+                    <div class="value-icon">📈</div>
+                    <h3>Skills Tracking</h3>
+                    <p>Track learning outcomes and hidden skills across any course or program with AI-powered mapping
+                        and visualization.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">✓</div>
                     <h3>Accreditation Support</h3>
-                    <p>Generate clean, automatic evidence for program review and accreditation with organized documentation and narrative reports.</p>
+                    <p>Generate clean, automatic evidence for program review and accreditation with organized
+                        documentation and narrative reports.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">👥</div>
@@ -561,32 +769,33 @@
                     <p>Reduce reporting burdens without disrupting teaching workflows. Support, not surveillance.</p>
                 </div>
                 <div class="value-card">
-                    <div class="value-icon">📈</div>
+                    <div class="value-icon">📊</div>
                     <h3>Institutional Quality</h3>
                     <p>Strengthen decision-making through AI-guided insights that reveal patterns and opportunities.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🎓</div>
                     <h3>Built for Higher Ed</h3>
-                    <p>Learning analytics built for higher education—not adapted to it. Designed with academic values at the core.</p>
+                    <p>Learning analytics built for higher education, not adapted to it. Designed with academic values
+                        at the core.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Dashboard Preview -->
-    <section class="dashboard-section">
+    <section>
         <div class="container">
-            <h2 class="section-title">See What TransformLearning Makes Possible</h2>
+            <h2 class="section-title">See What Transform Learning Makes Possible</h2>
             <div class="dashboard-content">
                 <div class="dashboard-image">
-                    <div style="text-align: center;">
-                        <h3>Interactive Dashboard Preview</h3>
-                        <p style="margin-top: 20px;">Real-time visibility into student learning, skill development, and program outcomes.</p>
+                    <div>
+                        <h3 style="font-size: 28px; margin-bottom: 20px;">Interactive Dashboard Preview</h3>
+                        <p style="font-size: 18px; line-height: 1.6;">Real-time visibility into student learning, skill
+                            development, and program outcomes at your fingertips.</p>
                     </div>
                 </div>
                 <div>
-                    <h3>TransformLearning gives academic leaders the visibility they need:</h3>
+                    <h3 style="font-size: 24px; margin-bottom: 20px;">Real-Time Visibility for Academic Leaders</h3>
                     <ul class="dashboard-features">
                         <li>Skill growth trajectories across courses and programs</li>
                         <li>Course-to-program outcome alignment mapping</li>
@@ -596,260 +805,420 @@
                         <li>Program-level dashboards for deans and chairs</li>
                     </ul>
                     <div class="quote-box">
-                        "In a recent pilot, a psychology department identified at-risk students two weeks earlier than traditional reporting allowed—and produced their strongest accreditation report in five years."
+                        "In a recent pilot, a psychology department identified at-risk students two weeks earlier than
+                        traditional reporting allowed, and produced their strongest accreditation report in five years."
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Role-Specific Tabs -->
-    <section>
+    <section class="bg-gray">
         <div class="container">
             <h2 class="section-title">Built for Every Academic Leadership Role</h2>
+            <p class="section-subtitle">Whether you're a dean, department chair, academic affairs leader, or faculty
+                member, Transform Learning provides the insights you need.</p>
+
             <div class="tabs">
                 <button class="tab-btn active" onclick="showTab(0)">For Deans</button>
                 <button class="tab-btn" onclick="showTab(1)">For Chairs</button>
                 <button class="tab-btn" onclick="showTab(2)">For Academic Affairs</button>
                 <button class="tab-btn" onclick="showTab(3)">For Faculty</button>
             </div>
-            
+
             <div class="tab-content active">
                 <h3>Visibility. Evidence. Impact.</h3>
-                <p>You need to see what's working across programs and demonstrate student learning with confidence. TransformLearning delivers:</p>
+                <p>You need visibility across programs and clear evidence of student learning. Transform Learning
+                    delivers program-level dashboards, skill-growth trends, and accreditation-ready documentation, so
+                    you can lead improvement with confidence.</p>
                 <ul>
                     <li>Cross-program dashboards showing skills growth and outcome achievement</li>
                     <li>Accreditation-ready evidence organized by program and standard</li>
                     <li>Institutional improvement metrics you can share with boards and stakeholders</li>
                     <li>Data-driven insights that support strategic planning</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Schedule a Dean Briefing</a>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 25px;">Schedule a Dean Briefing</a>
             </div>
-            
+
             <div class="tab-content">
                 <h3>Less Reporting. Better Decisions.</h3>
-                <p>You're managing outcomes alignment, assessment cycles, and supporting faculty—all while teaching. TransformLearning lightens that load:</p>
+                <p>Chairs juggle outcomes alignment, reporting cycles, and supporting faculty, all while teaching.
+                    Transform Learning reduces that burden through automated mapping, clean analytics, and early
+                    insights that make curriculum decisions easier.</p>
                 <ul>
                     <li>Automated outcome mapping across your curriculum</li>
                     <li>Clean analytics that clarify what's working and what needs attention</li>
                     <li>Early insights that make curriculum revision and course scheduling easier</li>
                     <li>Tools that reduce the assessment burden on your faculty</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">See How Chairs Use This</a>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 25px;">See How Chairs Use This</a>
             </div>
-            
+
             <div class="tab-content">
                 <h3>One System. Institution-Wide Clarity.</h3>
-                <p>Institutional reporting shouldn't require heroic manual effort. TransformLearning streamlines your work:</p>
+                <p>Institutional reporting doesn't have to be messy. Transform Learning produces clean, consistent
+                    outcomes data across programs, improving equity reporting, accreditation cycles, and continuous
+                    quality improvement.</p>
                 <ul>
                     <li>Consistent outcomes data across all programs</li>
                     <li>Simplified equity reporting and analysis</li>
                     <li>Smoother accreditation cycles with organized evidence</li>
                     <li>AI readiness that positions your institution for the future</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Request an Academic Affairs Demo</a>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 25px;">Request an Academic Affairs
+                    Demo</a>
             </div>
-            
+
             <div class="tab-content">
                 <h3>Support, Not Surveillance.</h3>
-                <p>Faculty don't need another administrative task—they need tools that make teaching clearer. TransformLearning helps you:</p>
+                <p>Faculty don't need another task, they need clarity. Transform Learning helps instructors see which
+                    students are developing key skills, which ones need support, and how well outcomes align with actual
+                    learning evidence.</p>
                 <ul>
                     <li>See which students are developing key skills and who needs support</li>
                     <li>Understand how well your assessments align with course outcomes</li>
                     <li>Track student progress without additional grading burden</li>
                     <li>Generate evidence for tenure, promotion, and course improvement</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Learn About Faculty Experience</a>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 25px;">Learn About Faculty Experience</a>
             </div>
         </div>
     </section>
 
-    <!-- Pilot Partner Section -->
-    <section id="pilot" class="pilot-section">
+    <section id="pilot" class="bg-dark">
         <div class="container">
             <div class="pilot-content">
-                <h2 class="section-title" style="color: white;">Become a TransformLearning Pilot Partner</h2>
-                <p style="font-size: 18px; margin-bottom: 20px;">Help shape the future of AI-powered learning. Join a select cohort of institutions pioneering outcomes analytics.</p>
-                <span class="badge">🌟 Only 8 Founding Partner Spots Remaining for Spring 2026</span>
-                
+                <h2 class="section-title">Become a Transform Learning Pilot Partner</h2>
+                <p style="font-size: 20px; margin-bottom: 20px;">Help shape the future of AI-powered learning analytics.
+                    Join a select cohort of institutions pioneering outcomes assessment in higher education.</p>
+                <span class="badge">Only 8 Founding Partner Spots Remaining for Spring 2026</span>
+
                 <div class="pilot-benefits">
                     <div class="pilot-benefit">
                         <h4>Early Access</h4>
-                        <p>Advanced analytics features months before release</p>
+                        <p>Advanced analytics features months before general release</p>
                     </div>
                     <div class="pilot-benefit">
                         <h4>Co-Branding</h4>
-                        <p>Recognition as a Founding Partner</p>
+                        <p>Recognition as a Founding Partner on our platform</p>
                     </div>
                     <div class="pilot-benefit">
                         <h4>Custom Insights</h4>
-                        <p>Tailored reports for your program</p>
+                        <p>Tailored analytics reports for your specific program</p>
                     </div>
                     <div class="pilot-benefit">
                         <h4>Priority Support</h4>
-                        <p>Direct access to our team</p>
+                        <p>Direct access to our technical and academic success teams</p>
+                    </div>
+                    <div class="pilot-benefit">
+                        <h4>Platform Influence</h4>
+                        <p>Help shape features built for your discipline</p>
+                    </div>
+                    <div class="pilot-benefit">
+                        <h4>Spotlight Feature</h4>
+                        <p>Featured profile on transformlearning.ai</p>
                     </div>
                 </div>
-                
-                <div style="margin-top: 40px;">
-                    <h4 style="margin-bottom: 15px;">The Commitment:</h4>
-                    <p>One semester • Two courses • Guided onboarding</p>
+
+                <div style="margin-top: 50px;">
+                    <h3 style="margin-bottom: 20px; font-size: 24px;">The Commitment</h3>
+                    <p style="font-size: 18px; margin-bottom: 15px;">One semester. Two courses. Guided onboarding.</p>
+                    <p style="font-size: 16px; opacity: 0.9;">Faculty receive guided onboarding and departments receive
+                        tailored dashboards and analytics.</p>
                 </div>
-                
-                <a href="#contact" class="btn btn-primary" style="margin-top: 30px; background: white; color: #1e293b;">Join the Pilot Cohort</a>
+
+                <a href="#contact" class="btn btn-white"
+                    style="margin-top: 40px; font-size: 18px; padding: 15px 40px;">Join the Pilot Partner Cohort</a>
             </div>
         </div>
     </section>
 
-    <!-- AI in Action Stories -->
     <section>
         <div class="container">
             <h2 class="section-title">AI in Action: Real Department Impacts</h2>
+            <p class="section-subtitle">See how departments across disciplines are using Transform Learning to improve
+                student outcomes and strengthen their programs.</p>
+
             <div class="stories-grid">
                 <div class="story-card">
                     <h3>Psychology Department</h3>
-                    <p>Outcome alignment analytics revealed skill gaps in research methods coursework. Faculty redesigned key assignments based on dashboard insights and closed the competency gap within a single semester.</p>
+                    <p>Outcome alignment analytics revealed skill gaps in research methods coursework. Faculty
+                        redesigned key assignments based on dashboard insights and closed the competency gap within a
+                        single semester. The department's accreditation self-study cited the data as evidence of
+                        continuous improvement.</p>
                 </div>
                 <div class="story-card">
                     <h3>Engineering Department</h3>
-                    <p>Hidden skill tracking showed first-year students were strong in computational thinking but weak in technical communication. Department chairs used engagement dashboards to adjust lab activities, resulting in measurable improvement.</p>
+                    <p>Hidden skill tracking showed first-year students were strong in computational thinking but weak
+                        in technical communication. Department chairs used engagement dashboards to adjust lab
+                        activities across all sections, resulting in measurable improvement in both written and oral
+                        presentation skills.</p>
                 </div>
                 <div class="story-card">
                     <h3>Nursing Program</h3>
-                    <p>Clinical competencies required for accreditation were automatically tracked across classroom and clinical placements. The program generated complete evidence packets, saving an estimated 40 hours of documentation work.</p>
+                    <p>Clinical competencies required for accreditation were automatically tracked across classroom and
+                        clinical placements. The program generated complete evidence packets with minimal faculty
+                        effort, saving an estimated 40 hours of documentation work during their accreditation cycle.</p>
+                </div>
+                <div class="story-card">
+                    <h3>Education Program</h3>
+                    <p>Improved alignment between learning outcomes and student evidence across practicum placements and
+                        coursework. Faculty used analytics to ensure candidates met InTASC standards consistently,
+                        resulting in higher edTPA pass rates.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section style="background: #f8fafc;">
+    <section class="bg-gray">
         <div class="container">
-            <h2 class="section-title">See TransformLearning in 60 Seconds</h2>
+            <h2 class="section-title">See Transform Learning in 60 Seconds</h2>
+            <p class="section-subtitle">Quick explainer videos showing how Transform Learning helps departments track
+                outcomes, identify at-risk students, and prepare for accreditation.</p>
+
             <div class="video-grid">
                 <div class="video-card">
                     <div class="video-placeholder">▶</div>
                     <h3>Skill Mapping in Action</h3>
-                    <p>See how AI maps outcomes across entire programs and reveals skill development patterns instantly.</p>
+                    <p>See how AI maps outcomes across entire programs and reveals skill development patterns instantly,
+                        giving you clarity on what students are learning.</p>
                 </div>
                 <div class="video-card">
                     <div class="video-placeholder">▶</div>
                     <h3>Early Warning for Retention</h3>
-                    <p>Discover how departments identify at-risk students before grades decline.</p>
+                    <p>Discover how departments identify at-risk students before grades decline, enabling timely
+                        interventions that improve retention rates.</p>
                 </div>
                 <div class="video-card">
                     <div class="video-placeholder">▶</div>
                     <h3>Accreditation Made Simple</h3>
-                    <p>Watch how programs generate accreditation evidence in minutes, not weeks.</p>
+                    <p>Watch how programs generate comprehensive accreditation evidence in minutes, not weeks, organized
+                        by standard and ready to submit.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section class="download-section">
+    <section class="bg-light-blue">
         <div class="container">
             <h2 class="section-title">Download Discipline-Specific AI Pilot Briefs</h2>
-            <p class="section-subtitle">Short, two-page guides showing how TransformLearning supports key academic programs.</p>
+            <p class="section-subtitle">Short, two-page guides showing how Transform Learning supports key academic
+                programs. Get detailed information tailored to your discipline.</p>
+
             <div class="download-grid">
                 <div class="download-card">
                     <h3>Nursing Programs</h3>
-                    <p>Clinical competency tracking, equity monitoring, and CCNE/ACEN accreditation documentation.</p>
+                    <p>Clinical competency tracking, equity monitoring across diverse student populations, and CCNE/ACEN
+                        accreditation documentation made simple.</p>
                     <a href="#contact" class="btn btn-secondary">Download Nursing Brief</a>
                 </div>
                 <div class="download-card">
                     <h3>Engineering Programs</h3>
-                    <p>ABET outcome mapping, capstone evaluation, and program-level evidence generation.</p>
+                    <p>ABET outcome mapping, capstone project evaluation, and program-level evidence generation with
+                        minimal faculty overhead.</p>
                     <a href="#contact" class="btn btn-secondary">Download Engineering Brief</a>
                 </div>
                 <div class="download-card">
                     <h3>Education Programs</h3>
-                    <p>Standards alignment, clinical practice assessment, and edTPA preparation support.</p>
+                    <p>Standards alignment across practicum placements, coursework, and credential requirements like
+                        edTPA and InTASC.</p>
                     <a href="#contact" class="btn btn-secondary">Download Education Brief</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Insights Section -->
-    <section id="insights">
+    <section style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">The Transform Learning Founding Cohort</h2>
+                <p class="section-subtitle" style="color: #78716c;">Only a limited number of departments will be invited
+                    into the inaugural cohort. Founding Partners are institutions committed to leading the evolution of
+                    learning analytics in higher education.</p>
+
+                <div style="background: white; padding: 40px; border-radius: 12px; margin-top: 40px;">
+                    <h3 style="font-size: 24px; margin-bottom: 25px; color: #1e293b;">Exclusive Recognition Benefits
+                    </h3>
+                    <ul style="list-style: none; text-align: left; max-width: 600px; margin: 0 auto;">
+                        <li style="padding: 12px 0; padding-left: 30px; position: relative; color: #475569;">
+                            <span style="position: absolute; left: 0; color: #f59e0b; font-weight: bold;">★</span>
+                            Digital badge for institutional marketing materials
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 30px; position: relative; color: #475569;">
+                            <span style="position: absolute; left: 0; color: #f59e0b; font-weight: bold;">★</span>
+                            Founding Partner certificate suitable for framing
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 30px; position: relative; color: #475569;">
+                            <span style="position: absolute; left: 0; color: #f59e0b; font-weight: bold;">★</span>
+                            Early access to all new platform features
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 30px; position: relative; color: #475569;">
+                            <span style="position: absolute; left: 0; color: #f59e0b; font-weight: bold;">★</span>
+                            Free customized analytics report for your program
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 30px; position: relative; color: #475569;">
+                            <span style="position: absolute; left: 0; color: #f59e0b; font-weight: bold;">★</span>
+                            Spotlight profile published on transformlearning.ai
+                        </li>
+                        <li style="padding: 12px 0; padding-left: 30px; position: relative; color: #475569;">
+                            <span style="position: absolute; left: 0; color: #f59e0b; font-weight: bold;">★</span>
+                            Recognition at our annual Learning Innovation Summit
+                        </li>
+                    </ul>
+                </div>
+
+                <p style="font-size: 18px; font-style: italic; margin-top: 30px; color: #78716c;">A small, high-impact
+                    group shaping the future of AI in higher education.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray">
         <div class="container">
             <h2 class="section-title">Insights & Research</h2>
+            <p class="section-subtitle">Stay ahead of the curve with thought leadership on AI-powered learning
+                analytics, accreditation best practices, and institutional effectiveness.</p>
+
             <div class="stories-grid">
                 <div class="story-card">
                     <h3>How AI Skill Mapping Strengthens Accreditation</h3>
-                    <p>Discover how AI-powered analytics produce clean, cross-course evidence perfectly aligned with institutional standards—reducing preparation time while improving quality.</p>
-                    <a href="#" style="color: #2563eb; font-weight: 600;">Read More →</a>
+                    <p>Discover how AI-powered analytics produce clean, cross-course evidence perfectly aligned with
+                        institutional standards, reducing preparation time while improving quality and demonstrating
+                        continuous improvement.</p>
+                    <a href="#contact" style="color: #2563eb; font-weight: 600; text-decoration: none;">Read More →</a>
                 </div>
                 <div class="story-card">
                     <h3>The Future of Learning Outcomes Assessment</h3>
-                    <p>Explore the organizational and technological shifts academic affairs teams need as AI-driven assessment becomes standard practice in higher education.</p>
-                    <a href="#" style="color: #2563eb; font-weight: 600;">Read More →</a>
+                    <p>Explore the organizational and technological shifts academic affairs teams need as AI-driven
+                        assessment becomes standard practice in higher education institutions.</p>
+                    <a href="#contact" style="color: #2563eb; font-weight: 600; text-decoration: none;">Read More →</a>
                 </div>
                 <div class="story-card">
                     <h3>Hidden Skill Analytics & Student Persistence</h3>
-                    <p>Learn how tracking micro-skills and engagement patterns reveals early risk indicators that traditional grades miss—giving time to intervene meaningfully.</p>
-                    <a href="#" style="color: #2563eb; font-weight: 600;">Read More →</a>
+                    <p>Learn how tracking micro-skills and engagement patterns reveals early risk indicators that
+                        traditional grades miss, giving advisors and faculty time to intervene meaningfully.</p>
+                    <a href="#contact" style="color: #2563eb; font-weight: 600; text-decoration: none;">Read More →</a>
+                </div>
+                <div class="story-card">
+                    <h3>Curriculum Alignment at Scale</h3>
+                    <p>A practical guide for deans and department chairs on using AI analytics to create program-level
+                        coherence, identify curricular gaps, and demonstrate continuous improvement.</p>
+                    <a href="#contact" style="color: #2563eb; font-weight: 600; text-decoration: none;">Read More →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="contact" class="cta-section">
+    <section>
         <div class="container">
-            <h2 class="section-title">Schedule a Dean/Chair Briefing</h2>
-            <p class="section-subtitle">A 15-minute conversation tailored to your program's goals and challenges. Learn how TransformLearning can support your department's success.</p>
-            <div class="cta-buttons">
-                <a href="mailto:partners@transformlearning.ai" class="btn btn-primary">Schedule a Briefing</a>
-                <a href="mailto:partners@transformlearning.ai" class="btn btn-secondary">Email Me the Overview</a>
+            <h2 class="section-title">Why AI-Powered Education?</h2>
+            <p class="section-subtitle">Artificial intelligence is transforming education by making learning more
+                personalized, assessment more meaningful, and teaching more effective across all our products.</p>
+
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Improved Student Engagement</h3>
+                    <p>AI-powered tools adapt to individual learning styles, keeping students engaged and motivated
+                        through personalized experiences.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>Better Learning Outcomes</h3>
+                    <p>Data-driven insights help educators identify struggling students early and provide targeted
+                        interventions that improve success rates.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Increased Efficiency</h3>
+                    <p>Automation of routine tasks frees educators to focus on what matters most: meaningful
+                        interactions with students.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Real-time analytics provide actionable insights that help institutions make informed decisions
+                        about curriculum and support.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Scalable Support</h3>
+                    <p>AI enables personalized attention for every student, regardless of class size or institutional
+                        resources.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Evidence-Based Teaching</h3>
+                    <p>Move from intuition to evidence with clear data showing what teaching methods work best for your
+                        students.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="contact" class="bg-light-blue">
+        <div class="container">
+            <h2 class="section-title">Ready to Transform Learning?</h2>
+            <p class="section-subtitle">Whether you're a university leader looking to improve outcomes, a teacher
+                seeking better tools, or an institution ready to embrace AI, we'd love to talk about how our solutions
+                can help.</p>
+            <div class="cta-buttons">
+                <a href="mailto:partners@transformlearning.ai" class="btn btn-primary">Schedule a Dean/Chair
+                    Briefing</a>
+                <a href="mailto:partners@transformlearning.ai" class="btn btn-secondary">Request More Information</a>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #64748b;">
+                Prefer email? We'll send you a brief overview with sample dashboards and pilot partnership details.
+            </p>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <h4>About</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About TransformLearning</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Why Higher Ed Needs Better Analytics</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#products">Our Products</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Team</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>For Leaders</h4>
+                    <h4>Products</h4>
                     <ul>
+                        <li><a href="#transform-learning">Transform Learning</a></li>
+                        <li><a href="#products">YourClassroom.ai</a></li>
+                        <li><a href="https://nemorize.com" target="_blank">Nemorize</a></li>
+                        <li><a href="#">Product Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>For Institutions</h4>
+                    <ul>
+                        <li><a href="#pilot">Become a Pilot Partner</a></li>
                         <li><a href="#">For Deans</a></li>
                         <li><a href="#">For Department Chairs</a></li>
                         <li><a href="#">For Academic Affairs</a></li>
-                        <li><a href="#">For Faculty</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Pilot Partnership</h4>
-                    <ul>
-                        <li><a href="#pilot">Become a Pilot Partner</a></li>
-                        <li><a href="#">Founding Cohort</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                        <li><a href="#">Partnership FAQ</a></li>
+                        <li><a href="#">Implementation Guide</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#insights">Insights & Research</a></li>
+                        <li><a href="#">Blog & Insights</a></li>
+                        <li><a href="#">Case Studies</a></li>
                         <li><a href="#">Discipline Briefs</a></li>
                         <li><a href="#">Video Library</a></li>
-                        <li><a href="#contact">Schedule a Briefing</a></li>
+                        <li><a href="#contact">Support</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 TransformLearning.ai. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2025 TransformLearning.ai. All rights reserved. | <a href="#" style="color: #94a3b8;">Privacy
+                        Policy</a> | <a href="#" style="color: #94a3b8;">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -858,7 +1227,7 @@
         function showTab(index) {
             const tabs = document.querySelectorAll('.tab-btn');
             const contents = document.querySelectorAll('.tab-content');
-            
+
             tabs.forEach((tab, i) => {
                 if (i === index) {
                     tab.classList.add('active');
@@ -866,7 +1235,7 @@
                     tab.classList.remove('active');
                 }
             });
-            
+
             contents.forEach((content, i) => {
                 if (i === index) {
                     content.classList.add('active');
@@ -875,4 +1244,20 @@
                 }
             });
         }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
+</body>
+
+</html>
